@@ -13,6 +13,9 @@ import TicketIcon from 'react-native-heroicons/solid/TicketIcon'
 import ProfileIcon from 'react-native-heroicons/outline/UserCircleIcon'
 import TicketsScreen from './screens/TicketsScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
 export default function App() {
 
 const Tab = createBottomTabNavigator();
@@ -66,11 +69,16 @@ function TabNavigator() {
 
 
   return (
+    <Provider 
+    store={createStore(
+      reducers
+    )}>
     <NavigationContainer>
       <TailwindProvider>
   <TabNavigator/>
       </TailwindProvider>
     </NavigationContainer>
+    </Provider>
   );
 }
 
@@ -80,7 +88,11 @@ const styles = StyleSheet.create({
     backgroundColor: '	#F8F8F8',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
+  Text:{
+    fontFamily:'Arial'
+  }
 });
 
 

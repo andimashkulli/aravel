@@ -13,7 +13,7 @@ const TicketsScreen:React.FC<TicketsScreen> = ({navigation}) => {
   const dates = [19,20,21,22,23,24];
   return(
     <View className='flex  text-white justify-start items-center'>
-    <View style={tw`bg-[#03314B] w-full h-58% flex-col justify-start items-start pt-18 pl-8`}>
+    <View style={tw`bg-[#03314B] w-full h-60% flex-col justify-start items-start pt-18 pl-8`}>
 <SafeAreaView className='flex justify-center'>
   {/* The arrow and filter icon */}
 <View className='flex flex-row w-full justify-between'>
@@ -41,6 +41,8 @@ const TicketsScreen:React.FC<TicketsScreen> = ({navigation}) => {
 <ScrollView horizontal contentContainerStyle={{
   
    paddingTop:45,
+   
+   
 }}
 showsHorizontalScrollIndicator={false}
 >
